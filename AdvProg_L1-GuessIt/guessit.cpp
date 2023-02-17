@@ -48,9 +48,9 @@ string getAnswer(int number, int randomNumber) {
               If number is equal randomNumber, the answer is "Congratulation! You win."
     ***/
     string answer;
-    if (guess > secretNumber)
+    if (number > secretNumber)
         answer = "Your number is higher.";
-    else if (guess < secretNumber)
+    else if (number < secretNumber)
         answer = "Your number is lower";
     else
         answer = "Congratulation! You win!";
