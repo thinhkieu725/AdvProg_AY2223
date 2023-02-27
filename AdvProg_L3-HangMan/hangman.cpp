@@ -51,7 +51,10 @@ vector<string> readWordListFromFile(const string& filePath)
 bool isCharInWord(const char ch, const string& word)
 {
     // TODO: return true if ch is in word else return false
-    return word.find_first_of(ch) != string::npos;
+    for (int i = 0; i < (int) word.size(); ++i)
+        if (word[i] == ch) return true;
+
+    return false;
 }
 
 /***
@@ -65,11 +68,8 @@ string chooseWordFromList(const vector<string>& wordList, int index)
 {
     // TODO: Return a lowercase word in the index position of the vector wordList.
     string answer;
-    string answer1 = wordList[index];
-    for (int i = 0; i < answer1.size(); i++){
-        if (answer1[i] <='Z' && answer1[i] >= 'A') answer += (answer1[i] + 32);
-        else answer += answer1;
-    }
+    answer = wordList[index];
+    for (int i = 0; i < (int) answer.size(); ++i) answer[i] = tolower(answer[i]);
     return answer;
 }
 
@@ -120,6 +120,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
     chars += ch;
+    chars += ' ';
 }
 
 /***
