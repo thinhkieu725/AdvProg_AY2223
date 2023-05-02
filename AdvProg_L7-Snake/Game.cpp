@@ -151,7 +151,7 @@ void Game::nextStep()
 		// check if snake can move to the next direction, set current direction as next
         if (canChange(currentDirection, next)) {
         	// YOUR CODE HERE
-          currentDiection = next;
+          currentDirection = next;
         	break;
 		     }
     }
